@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+				<head><title> Flask </title></head>
+</html>
+<body>
+				<table cellpadding=1 border=1>
+								{% for i in complaints %}
+				<tr>
+								<td>{{ i[0] }}</td>
+								<td>{{ i[1] }}</td>
+				</tr>
+								{% endfor %}
+				</table>
+				<form>
+								<select id="sai" onchange="sannihita()">
+								{% for i in complaints %}
+								<option value="{{ i[1] }}">{{ i[0] }}</option>
+								{% endfor %}
+								</select>
+								<input id="pragya" type="text">
+				</form>
+				<script> 
+					function sannihita(){
+									var x = document.getElementById("sai").value;
+									var y = document.getElementById("pragya");
+									y.value = x;
+					}
+				</script>
+</body>
+</html>
